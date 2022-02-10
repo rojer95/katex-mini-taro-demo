@@ -180,12 +180,12 @@
     vertical-align: bottom;
     position: relative;
 
-    > .kspan {
+    > .katex-span {
       display: block;
       height: 0;
       position: relative;
 
-      > .kspan {
+      > .katex-span {
         display: inline-block;
       }
 
@@ -239,7 +239,7 @@
   }
 
   .mfrac {
-    > .kspan > .kspan {
+    > .katex-span > .katex-span {
       text-align: center;
     }
 
@@ -288,7 +288,7 @@
     left: 0;
   }
 
-  .clap > .inner > .kspan {
+  .clap > .inner > .katex-span {
     margin-left: -50%;
     margin-right: 50%;
   }
@@ -375,11 +375,11 @@
     }
 
     &.mult {
-      .delim-size1 > .kspan {
+      .delim-size1 > .katex-span {
         font-family: KaTeX_Size1;
       }
 
-      .delim-size4 > .kspan {
+      .delim-size4 > .katex-span {
         font-family: KaTeX_Size4;
       }
     }
@@ -460,7 +460,7 @@
     text-align: left;
   }
 
-  .ksvg {
+  .katex-svg {
     display: block;
     position: absolute; // absolute relative to parent
     width: 100%;

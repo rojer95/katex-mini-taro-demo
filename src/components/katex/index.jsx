@@ -77,7 +77,7 @@ const katex2richnode = (type, dom, children) => {
     return {
       name: "span",
       attrs: {
-        class: classes + " kspan",
+        class: classes + " katex-span",
         style: styles
       },
       children
@@ -114,7 +114,7 @@ const katex2richnode = (type, dom, children) => {
       name: "img",
       attrs: {
         src: svg2base64(svg),
-        class: "ksvg"
+        class: "katex-svg"
       }
     };
   }
