@@ -22,46 +22,7 @@ const ESCAPE_REGEX = /[&><"']/g;
 function escape(text) {
   return String(text).replace(ESCAPE_REGEX, match => ESCAPE_LOOKUP[match]);
 }
-/**
- * Sometimes we want to pull out the innermost element of a group. In most
- * cases, this will just be the group itself, but when ordgroups and colors have
- * a single element, we want to pull that out.
- */
-const getBaseElem = function(group) {
-  if (group.type === "ordgroup") {
-    if (group.body.length === 1) {
-      return getBaseElem(group.body[0]);
-    } else {
-      return group;
-    }
-  } else if (group.type === "color") {
-    if (group.body.length === 1) {
-      return getBaseElem(group.body[0]);
-    } else {
-      return group;
-    }
-  } else if (group.type === "font") {
-    return getBaseElem(group.body);
-  } else {
-    return group;
-  }
-};
 
-export const assert = function(value) {
-  if (!value) {
-    throw new Error("Expected non-null, but got " + String(value));
-  }
-  return value;
-};
-
-/**
- * Return the protocol of a URL, or "_relative" if the URL does not specify a
- * protocol (and thus is relative).
- */
-export const protocolFromUrl = function(url) {
-  const protocol = /^\s*([^\\/#]*?)(?::|&#0*58|&#x0*3a)/i.exec(url);
-  return protocol != null ? protocol[1] : "_relative";
-};
 const svg2base64 = svg => {
   const txt = svg
     .replace(
@@ -201,18 +162,18 @@ const toMarkup = doms => {
       return katex2richnode(
         type,
         dom,
-        dom.children && dom.children.length > 0 ? toMarkup(dom.children) : null
+        dom.children && dom.children.length > 0 ? toMarkup(dom.children) : []
       );
     })
     .filter(i => !!i);
 };
 
-export default latex => {
+export default (latex, option = {}) => {
   try {
-    const tree = katex.__renderToHTMLTree(latex, {
+    const tree = katex.__renderToDomTree(latex, {
+      ...option,
       output: "html"
     });
-
     return toMarkup([tree]);
   } catch (error) {
     return [

@@ -5,12 +5,12 @@ import parse from "./parse";
 
 import "./index.less";
 
-export default ({ latex }) => {
+export default ({ latex, option }) => {
   const [nodes, setNodes] = useState([]);
 
   useEffect(() => {
-    setNodes(parse(latex));
-  }, [latex]);
+    setNodes(parse(latex, option));
+  }, [latex, option]);
 
   return <RichText nodes={nodes} />;
 };
