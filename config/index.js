@@ -8,7 +8,7 @@ const config = {
     828: 1.81 / 2
   },
   sourceRoot: "src",
-  outputRoot: "demo/dist",
+  outputRoot: "dist",
   plugins: [],
   defineConstants: {},
   copy: {
