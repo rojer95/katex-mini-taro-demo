@@ -33,10 +33,15 @@ npm install @rojer/katex-mini
 ```
 
 - 在小程序开发者工具中 - 工具 - 构建 npm
+- 在 app.wxss 加载 katex 的样式
+
+```less
+@import "./miniprogram_npm/@rojer/katex-mini/index.wxss";
+```
+
 - 在 app.js 的 onLaunch 中加载 katex
 
 ```js
-// app.js
 // app.js
 import { loadKatex } from "@rojer/katex-mini";
 App({
@@ -143,8 +148,6 @@ Page({
   }
 });
 ```
-
-原生小程序中使用，详见 [Demo](./demo)
 
 ## 示例预览图
 

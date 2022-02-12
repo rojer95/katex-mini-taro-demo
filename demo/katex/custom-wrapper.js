@@ -1,1 +1,0 @@
-require("./runtime"),require("./taro"),require("./vendors"),(wx["webpackJsonp"]=wx["webpackJsonp"]||[]).push([[6],[],[[47,0,1,2]]]);

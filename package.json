@@ -43,7 +43,7 @@
     "@tarojs/react": "3.4.1",
     "@tarojs/runtime": "3.4.1",
     "@tarojs/taro": "3.4.1",
-    "@rojer/katex-mini": "^1.0.3",
+    "@rojer/katex-mini": "^1.0.4",
     "react": "^17.0.0",
     "react-dom": "^17.0.0"
   },

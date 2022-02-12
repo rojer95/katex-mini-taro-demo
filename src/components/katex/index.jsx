@@ -3,7 +3,7 @@ import { RichText } from "@tarojs/components";
 
 import parse from "@rojer/katex-mini";
 
-import "./index.less";
+import "@rojer/katex-mini/src/index.less";
 import { useKatexLoaded } from "./Loader";
 
 export default React.memo(

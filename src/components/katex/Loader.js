@@ -13,7 +13,6 @@ export const KatexProvider = ({ children }) => {
     Taro.request({
       url: "https://lib.baomitu.com/KaTeX/latest/katex.min.js",
       success: ({ data: code }) => {
-        console.log(code);
         loadKatex(code);
         setLoad(true);
       }
