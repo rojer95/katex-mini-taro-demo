@@ -4,7 +4,7 @@
   "description": "基于Taro的小程序版KaTeX",
   "appid": "wx94366e9d65accb3c",
   "setting": {
-    "urlCheck": true,
+    "urlCheck": false,
     "es6": false,
     "postcss": false,
     "minified": false

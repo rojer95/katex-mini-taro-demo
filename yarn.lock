@@ -1310,6 +1310,13 @@
     "@prefresh/core" "^1.3.1"
     "@prefresh/utils" "^1.1.0"
 
+"@rojer/katex-mini@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.npmjs.org/@rojer/katex-mini/-/katex-mini-1.0.3.tgz#e71e03e953678c9ae120ba8497d71b7d934ef01a"
+  integrity sha512-t/ngdec1mIHM7in2RoxgAuPUQ2ETxCBaKZYAorTfnaLDKSicH+jZsga0NkZMQDraJeRZLrZy5SlPULGTy69i2w==
+  dependencies:
+    eval5 "^1.4.7"
+
 "@sindresorhus/is@^0.14.0":
   version "0.14.0"
   resolved "https://registry.npmjs.org/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
