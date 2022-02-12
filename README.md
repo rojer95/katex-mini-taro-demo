@@ -4,6 +4,10 @@
 
 > 依赖微信小程序的 RichText 组件渲染，请注意小程序基础库 1.4.0 开始支持，低版本需做兼容处理。
 
+## 在线 Demo
+
+![在线 Demo](./assets/qrcode.jpg)
+
 ## 运行 demo
 
 ```bash
