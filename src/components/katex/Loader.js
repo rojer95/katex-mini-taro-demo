@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import { loadKatex } from "@rojer/katex-mini";
 import Taro from "@tarojs/taro";
+import { loadKatex } from "@rojer/katex-mini";
 
 const Context = React.createContext({
   load: false

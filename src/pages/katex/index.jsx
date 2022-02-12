@@ -5,7 +5,7 @@ import "./index.less";
 
 export default () => {
   const [latex, setLatex] = useState(
-    "\\displaystyle \\left( \\sum_{k=1}^n a_k b_k \\right)^2 \\leq \\left( \\sum_{k=1}^n a_k^2 \\right) \\left( \\sum_{k=1}^n b_k^2 \\right)"
+    "\\begin{pmatrix} 0 & -i \\\\ i & 0 \\end{pmatrix}\\\\"
   );
   const [input, setInput] = useState(latex);
 
