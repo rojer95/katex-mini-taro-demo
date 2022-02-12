@@ -102,61 +102,6 @@ Page({
 
 Demo 详情见：[katex-mini-core/demo](https://github.com/rojer95/katex-mini-core/tree/master/demo)
 
-## 在原生小程序项目中使用 Taro 编译好的组件【不推荐】
-
-> 缺点：包含 Taro 各种依赖打包出来的结果比较大，不推荐
-
-```bash
-# clone 项目
-git clone https://github.com/rojer95/katex-weapp.git
-
-# 项目根目录安装依赖
-yarn
-
-# 编译组件
-yarn build:weapp:components
-
-```
-
-组件编译后:
-
-- 复制`dist`文件夹的到你的原生项目中，并改名为 `katex`
-- 在 `[page].json` 中做组件声明
-
-```json
-{
-  "usingComponents": {
-    "katex": "../../katex/components/katex"
-  }
-}
-```
-
-- 在 `[page].wxml` 中使用
-
-```xml
-<!--index.wxml-->
-<view class="container">
-  <katex props="{{katexProps}}"></katex>
-</view>
-```
-
-- 在 `[page].js` 中配置 props
-
-```js
-// index.js
-Page({
-  data: {
-    katexProps: {
-      latex: "x=a^2"
-    }
-  }
-});
-```
-
-## 示例预览图
+## 预览
 
 ![示例预览图](./assets/demo-static.jpg)
-
-## 缺点
-
-- ~~占用体积较大 500k+~~（使用动态加载 KaTeX 与加载 CDN 字体包减少包体大小）

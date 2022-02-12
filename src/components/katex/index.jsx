@@ -15,7 +15,6 @@ export default React.memo(
       if (load) setNodes(parse(latex, option));
     }, [latex, option, load]);
 
-    console.log("nodes", JSON.stringify(nodes));
     return <RichText nodes={nodes} />;
   },
   (prevProps, nextProps) => prevProps.latex === nextProps.latex
