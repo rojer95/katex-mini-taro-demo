@@ -17,6 +17,11 @@ const config = {
   },
   framework: "react",
   mini: {
+    webpackChain(chain) {
+      chain
+        .plugin("analyzer")
+        .use(require("webpack-bundle-analyzer").BundleAnalyzerPlugin, []);
+    },
     postcss: {
       pxtransform: {
         enable: true,

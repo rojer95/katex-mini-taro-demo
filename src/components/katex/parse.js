@@ -1,4 +1,5 @@
-import katex from "katex";
+import Taro from "@tarojs/taro";
+import { Interpreter } from "eval5";
 
 // hyphenate and escape adapted from Facebook's React under Apache 2 license
 
@@ -152,12 +153,12 @@ const toMarkup = doms => {
   return doms
     .map(dom => {
       let type;
-      if (dom instanceof katex.__domTree.Span) type = "span";
-      if (dom instanceof katex.__domTree.Anchor) type = "anchor";
-      if (dom instanceof katex.__domTree.LineNode) type = "line";
-      if (dom instanceof katex.__domTree.PathNode) type = "path";
-      if (dom instanceof katex.__domTree.SvgNode) type = "svg";
-      if (dom instanceof katex.__domTree.SymbolNode) type = "text";
+      if (dom instanceof rootContext.katex.__domTree.Span) type = "span";
+      if (dom instanceof rootContext.katex.__domTree.Anchor) type = "anchor";
+      if (dom instanceof rootContext.katex.__domTree.LineNode) type = "line";
+      if (dom instanceof rootContext.katex.__domTree.PathNode) type = "path";
+      if (dom instanceof rootContext.katex.__domTree.SvgNode) type = "svg";
+      if (dom instanceof rootContext.katex.__domTree.SymbolNode) type = "text";
 
       return katex2richnode(
         type,
@@ -168,9 +169,32 @@ const toMarkup = doms => {
     .filter(i => !!i);
 };
 
+const rootContext = {
+  console,
+  setTimeout,
+  clearTimeout,
+  setInterval,
+  clearInterval
+};
+
+export const loadKatex = async url => {
+  const { data } = await Taro.request({
+    url
+  });
+  console.log("code", data);
+  try {
+    var interpreter = new Interpreter(rootContext, {
+      rootContext
+    });
+    interpreter.evaluate(data);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export default (latex, option = {}) => {
   try {
-    const tree = katex.__renderToDomTree(latex, {
+    const tree = rootContext.katex.__renderToDomTree(latex, {
       ...option,
       output: "html"
     });
