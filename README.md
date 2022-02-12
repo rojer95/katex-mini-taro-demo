@@ -28,7 +28,7 @@ yarn dev:weapp
 ```bash
 
 # 在小程序中安装依赖
-npm install @rojer/katex-mini-core
+npm install @rojer/katex-mini
 
 ```
 
