@@ -1,6 +1,6 @@
-# katex-weapp
+# katex-weapp-taro-demo
 
-基于 KaTeX 构建的小程序原生 LaTeX 渲染组件（不依赖服务端渲染）
+基于 KaTeX 构建的 LaTeX 渲染组件（不依赖服务端渲染），Taro 版本 Demo
 
 > 依赖微信小程序的 RichText 组件渲染，请注意小程序基础库 1.4.0 开始支持，低版本需做兼容处理。
 
@@ -12,7 +12,7 @@
 
 ```bash
 # clone 项目
-git clone https://github.com/rojer95/katex-weapp.git
+git clone git@github.com:rojer95/katex-mini-taro-demo.git
 
 # 项目根目录安装依赖
 yarn
@@ -26,82 +26,3 @@ yarn dev:weapp
 
 - 打开小程序开发者工具, 打开 dist 目录
 - 可以修改文本框内容 Latex 公式，点击渲染查看效果
-
-## 在原生小程序项目中直接使用
-
-```bash
-
-# 在小程序中安装依赖
-npm install @rojer/katex-mini
-
-```
-
-- 在小程序开发者工具中 - 工具 - 构建 npm
-- 在 app.wxss 加载 katex 的样式
-
-```less
-@import "./miniprogram_npm/@rojer/katex-mini/index.wxss";
-```
-
-- 在 app.js 的 onLaunch 中加载 katex
-
-```js
-// app.js
-import { loadKatex } from "@rojer/katex-mini";
-App({
-  onLaunch() {
-    // 通过动态方式加载katex代码，节省小程序包体大小
-    wx.request({
-      url: "https://lib.baomitu.com/KaTeX/latest/katex.min.js",
-      success: ({ data: code }) => {
-        loadKatex(code);
-        wx.katex = true;
-      }
-    });
-  }
-});
-```
-
-- 在小程序中解析 latex
-
-```js
-// index.js
-import parse from "@rojer/katex-mini";
-
-Page({
-  data: {
-    nodes: [],
-    latex:
-      "\\displaystyle \\frac{1}{\\Bigl(\\sqrt{\\phi \\sqrt{5}}-\\phi\\Bigr) e^{\\frac25 \\pi}} = 1+\\frac{e^{-2\\pi}} {1+\\frac{e^{-4\\pi}} {1+\\frac{e^{-6\\pi}} {1+\\frac{e^{-8\\pi}} {1+\\cdots} } } }"
-  },
-
-  onInput: function(e) {
-    this.setData({
-      latex: e.detail.value
-    });
-  },
-
-  renderLatex: function() {
-    this.setData({
-      nodes: parse(this.data.latex)
-    });
-  }
-});
-```
-
-- 在页面中展示
-
-```html
-<!--index.wxml-->
-<view class="container">
-  <rich-text nodes="{{nodes}}"></rich-text>
-  <textarea value="{{latex}}" bindinput="onInput" maxlength="1400"></textarea>
-  <button bindtap="renderLatex">渲染</button>
-</view>
-```
-
-Demo 详情见：[katex-mini-core/demo](https://github.com/rojer95/katex-mini-core/tree/master/demo)
-
-## 预览
-
-![示例预览图](./assets/demo-static.jpg)
