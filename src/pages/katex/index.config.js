@@ -1,3 +1,3 @@
 export default definePageConfig({
-  navigationBarTitleText: "KaTeX"
+  navigationBarTitleText: "原生渲染latex"
 });

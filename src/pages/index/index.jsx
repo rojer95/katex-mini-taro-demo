@@ -13,7 +13,17 @@ export default () => {
           });
         }}
       >
-        KaTeX渲染Demo
+        原生渲染Latex
+      </Button>
+      <Button
+        className="btn"
+        onClick={() => {
+          Taro.navigateTo({
+            url: "/pages/katex-api/index"
+          });
+        }}
+      >
+        API渲染Latex
       </Button>
     </View>
   );

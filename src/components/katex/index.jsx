@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { RichText } from "@tarojs/components";
 
-import "@rojer/katex-mini/src/index.less";
 import parse from "@rojer/katex-mini";
 
 import { useKatexLoaded } from "./Loader";

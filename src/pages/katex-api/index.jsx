@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { View, Textarea, Button } from "@tarojs/components";
-import Katex from "../../components/katex";
+import Katex from "../../components/katex-api";
 import "./index.less";
 
 const katexOption = {
   displayMode: true,
   throwOnError: false
 };
+
 export default () => {
   const [latex, setLatex] = useState(`
   {{}_{ }^{ } \\int _{ }^{ }k \\text{d} x=kx+C}
