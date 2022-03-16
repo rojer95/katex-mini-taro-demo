@@ -26,7 +26,6 @@ export default () => {
           onInput={e => {
             setInput(e.target.value);
           }}
-          autoHeight
         />
         <Button
           onClick={() => {

@@ -8,7 +8,7 @@ export default React.memo(
 
     const loadLatexNodesFromApi = async text => {
       Taro.request({
-        url: "http://katex-api.eqistu.cn",
+        url: "https://katex-api.eqistu.cn",
         data: {
           latex: text
         },
