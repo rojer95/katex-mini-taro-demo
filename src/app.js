@@ -1,6 +1,5 @@
 import { Component } from "react";
 import "./app.less";
-import { KatexProvider } from "./components/katex/Loader";
 
 class App extends Component {
   componentDidMount() {}
@@ -13,7 +12,7 @@ class App extends Component {
 
   // this.props.children 是将要会渲染的页面
   render() {
-    return <KatexProvider>{this.props.children}</KatexProvider>;
+    return this.props.children;
   }
 }
 
