@@ -9,7 +9,7 @@ const katexOption = {
 };
 export default () => {
   const [latex, setLatex] = useState(`
-  {{}_{ }^{ } \\int _{ }^{ }k \\text{d} x=kx+C}
+  \\color{red}\\sqrt{x}
 `);
   const [input, setInput] = useState(latex);
 

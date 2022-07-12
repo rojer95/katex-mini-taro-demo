@@ -14,11 +14,11 @@
     "autoAudits": false,
     "uglifyFileName": false,
     "uploadWithSourceMap": true,
-    "enhance": true,
+    "enhance": false,
     "showShadowRootInWxmlPanel": true,
     "packNpmManually": false,
     "packNpmRelationList": [],
-    "minifyWXSS": true,
+    "minifyWXSS": false,
     "useStaticServer": true,
     "showES6CompileOption": false,
     "checkInvalidKey": true,
@@ -29,7 +29,7 @@
     },
     "disableUseStrict": false,
     "useCompilerPlugins": false,
-    "minifyWXML": true
+    "minifyWXML": false
   },
   "compileType": "miniprogram",
   "libVersion": "2.24.6",
