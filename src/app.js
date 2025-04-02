@@ -1,5 +1,6 @@
 import { Component } from "react";
 import "./app.less";
+import "@rojer/katex-mini/dist/index.css";
 
 class App extends Component {
   componentDidMount() {}
